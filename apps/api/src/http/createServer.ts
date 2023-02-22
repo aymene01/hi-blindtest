@@ -5,6 +5,7 @@ import { Options } from './types'
 import cors from 'cors'
 import morgan from 'morgan'
 import router from './routes'
+import { createSocketServer } from '@/socket/createServer'
 
 export type Server = {
 	start(): Promise<void>
@@ -45,6 +46,8 @@ export const createServer = (opts: Options): Server => {
 
 	const httpServer = http.createServer(app)
 	httpServer.keepAliveTimeout = opts.keepAliveTimeout
+
+	createSocketServer(httpServer)
 
 	return {
 		start: async () => {

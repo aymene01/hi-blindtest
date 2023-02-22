@@ -27,7 +27,8 @@
 			"@/middlewares/*": ["http/middlewares/*"],
 			"@/lib/*": ["lib/*"],
 			"@/iam/*": ["iam/*"],
-			"@/toolbox/*": ["toolbox/*"]
+			"@/toolbox/*": ["toolbox/*"],
+			"@/socket/*": ["socket/*"]
 		}
 	},
 	"include": ["src/**/*.ts", "prisma/**/*.ts", "Request.d.ts"],
